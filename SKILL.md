@@ -12,7 +12,7 @@ When the project is Gemara Visual, its repository rules are authoritative. Do no
 ## Required operating rules
 
 1. Read the relevant references before editing: `references/gemara-visual-integration.md` when in Gemara Visual; otherwise `references/design-system.md`, `references/editorial-rules.md`, `references/semantic-pipeline.md`, and `references/torah-hebrew-precision.md`.
-2. Inspect the source, study the text and commentary, extract or receive a transcript when the input is a class recording, and create a timestamped semantic outline before choosing visuals.
+2. Inspect the source, study the text and commentary, extract or receive a transcript when the input is a class recording, and create a timestamped semantic outline before choosing visuals. Follow [video-input.md](references/video-input.md); if the video cannot be understood, stop rather than inventing visuals.
 3. Never invent a quotation, source, halakhic conclusion, measurement, translation, or attribution. Mark uncertain material for review.
 4. In Gemara Visual, do not turn a recorded teacher into the lesson's visual language by default. Use the project's physical world, canonical 170 cm person, source text, and deterministic scene transitions. Use PiP/photographs only when the approved storyboard says they teach something.
 5. Prefer the project's physical scenes and source-backed pieces over decorative photos. Any generated illustration must be labeled as an example or editorial visualization and must not impersonate a source page, historical evidence, or a rabbinic figure.

@@ -31,4 +31,12 @@ class ManifestTests(unittest.TestCase):
         for term in ("npx hyperframes check --json", "same moment ids", "must not receive a prompt"):
             self.assertIn(term, hyper)
 
+    def test_video_input_requires_timestamps_and_has_fallback(self):
+        doc=(ROOT/"references/video-input.md").read_text()
+        script=(ROOT/"scripts/transcribe_video.py").read_text()
+        for term in ("timestamped", "speech-to-scene contract", "openai-whisper", "stop semantic editing"):
+            self.assertIn(term, doc)
+        for term in ("--word_timestamps", "video not found", "Whisper is not installed"):
+            self.assertIn(term, script)
+
 if __name__ == "__main__": unittest.main()
