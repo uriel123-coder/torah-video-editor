@@ -31,6 +31,8 @@ Every inserted visual needs a time range and a reason grounded in the spoken con
 
 If the speech cannot be understood, stop semantic editing and return a transcript-review task. Do not fill the gap with generic stock imagery. Keep the presenter or original footage only when it is the least misleading option.
 
+For a recorded-class edit, also preserve the original video/audio and set the output duration to the source duration. The transcript is not a license to summarize later: visuals appear at the same timestamps as the claims they explain.
+
 ## Gemara Visual example
 
 For a class explaining Berakhot 2a, the transcript may support: `night / stars`, `kohanim and terumah`, `mikveh and waiting until night`, and `Rabbi Eliezer / Sages / Rabban Gamliel`. It does not by itself verify the Hebrew quotation or a halakhic conclusion; those still require the project's source and teacher review.

@@ -20,9 +20,9 @@ source study → learner/teacher explanation → VisualSpec → storyboard data
 
 ## Manifest contract
 
-The repository examples define the machine-readable shape. Required top-level fields are `schema_version`, `project`, `sources`, `beats`, `assets`, `scenes`, and `qa`.
+The repository examples define the machine-readable shape. Required top-level fields are `schema_version`, `project`, `sources`, `beats`, `assets`, `scenes`, and `qa`. In `recorded_class` mode, also require source/output duration, preserved original audio, timestamped transcript metadata, and a segment-to-speech mapping.
 
-Each scene has `id`, `in`, `out`, `beat_ids`, `layout`, `purpose`, `text_direction`, `visuals`, and `review`. Time is seconds from media start. Scene intervals must be positive and non-overlapping unless a transition is explicitly represented.
+Each scene has `id`, `in`, `out`, `beat_ids`, `layout`, `purpose`, `text_direction`, `visuals`, and `review`. Time is seconds from media start. Scene intervals must be positive and non-overlapping unless a transition is explicitly represented. In recorded-class mode, a visual scene also carries `source_time` and `spoken_claim`; neutral source-video holds are the only exception.
 
 ## Transcription and planning
 

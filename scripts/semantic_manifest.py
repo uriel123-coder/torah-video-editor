@@ -36,6 +36,22 @@ def validate(data):
     for a,b in zip(scenes, scenes[1:]):
         if a["out"] > b["in"]: errors.append(f"scene overlap: {a.get('id')} and {b.get('id')}")
     if data["qa"].get("status") == "final" and data["qa"].get("blocking"): errors.append("project marked final with blocking QA items")
+    project=data.get("project", {})
+    if project.get("mode") == "recorded_class":
+        source_duration=project.get("source_duration")
+        output_duration=project.get("output_duration")
+        if not isinstance(source_duration, (int,float)) or not isinstance(output_duration, (int,float)):
+            errors.append("recorded_class requires source_duration and output_duration")
+        elif abs(source_duration-output_duration) > 0.05: errors.append("recorded_class output_duration must equal source_duration")
+        audio=data.get("audio", {})
+        if audio.get("mode") != "original" or audio.get("preserve") is not True: errors.append("recorded_class must preserve original audio")
+        transcript=data.get("transcript", {})
+        if transcript.get("timestamps") is not True: errors.append("recorded_class requires timestamped transcript metadata")
+        for i, segment in enumerate(data.get("segments", [])):
+            st=segment.get("source_time", {})
+            if not isinstance(st.get("in"),(int,float)) or not isinstance(st.get("out"),(int,float)) or st["out"] <= st["in"]: errors.append(f"segment {i} has invalid source_time")
+            elif st["out"] > source_duration + 0.05: errors.append(f"segment {i} exceeds source_duration")
+            if not segment.get("spoken_claim"): errors.append(f"segment {i} missing spoken_claim")
     return errors
 
 def report(data):

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.2",
+  "project": {"title": "Berakhot 2a — clase grabada", "mode": "recorded_class", "source_media": "class.mp4", "source_duration": 319.135, "output_duration": 319.135, "aspect_ratio": "16:9"},
+  "audio": {"mode": "original", "preserve": true, "source": "class.mp4"},
+  "transcript": {"path": "transcript.json", "language": "es", "timestamps": true},
+  "sources": [{"id": "berakhot-2a-mishna", "work": "Mishnah Berakhot", "locator": "2:1 / source must be verified", "language": "he", "status": "needs_review"}],
+  "beats": [{"id": "b-night", "in": 0, "out": 117, "type": "texto", "summary": "Shemá dos veces al día y pregunta por el horario", "confidence": 0.9}, {"id": "b-stars", "in": 117, "out": 173.3, "type": "escena", "summary": "Cohaním, terumá y salida de las estrellas", "confidence": 0.88}, {"id": "b-opinions", "in": 174.2, "out": 262.2, "type": "opinions", "summary": "Tres límites de la noche", "confidence": 0.9}],
+  "assets": [{"id": "night-timeline", "kind": "timeline", "label": "Una noche con tres límites", "provenance": "Gemara Visual renderer", "review": "approved-for-review"}, {"id": "kohanim-terumah", "kind": "physical-scene", "label": "Cohaním y terumá al salir las estrellas", "provenance": "Gemara Visual renderer", "review": "approved-for-review"}],
+  "segments": [
+    {"id": "seg-01", "source_time": {"in": 0.9, "out": 117}, "spoken_claim": "La clase presenta el Shemá de la noche y la necesidad de definir su horario", "visual_mode": "source-plus-graphic", "graphic_intent": "Mostrar la pregunta y el ciclo noche/día", "visual_ids": ["night-timeline"], "review": "needs_review"},
+    {"id": "seg-02", "source_time": {"in": 117, "out": 173.3}, "spoken_claim": "El kohén espera hasta la noche; salen las estrellas y puede comer terumá", "visual_mode": "physical-scene", "graphic_intent": "Mostrar mikvé → espera → estrellas → terumá en ese orden", "visual_ids": ["kohanim-terumah"], "review": "needs_review"},
+    {"id": "seg-03", "source_time": {"in": 174.2, "out": 262.2}, "spoken_claim": "Rabí Eliezer: primer tercio; Sabios: medianoche; Rabán Gamliel: alba", "visual_mode": "source-plus-graphic", "graphic_intent": "Mostrar las tres opiniones juntas y con igual peso sobre la misma línea nocturna", "visual_ids": ["night-timeline"], "review": "needs_review"}
+  ],
+  "scenes": [
+    {"id": "scene-01", "in": 0, "out": 117, "beat_ids": ["b-night"], "layout": "source-plus-graphic", "purpose": "Acompañar la pregunta por el horario", "text_direction": "mixed", "source_time": {"in": 0.9, "out": 117}, "spoken_claim": "Shemá nocturno y definición del horario", "visuals": [{"asset_id": "night-timeline"}], "review": {"status": "draft", "blocking": []}},
+    {"id": "scene-02", "in": 117, "out": 173.3, "beat_ids": ["b-stars"], "layout": "physical-scene", "purpose": "Explicar el comienzo al salir las estrellas", "text_direction": "mixed", "source_time": {"in": 117, "out": 173.3}, "spoken_claim": "Kohén, mikvé, noche, estrellas y terumá", "visuals": [{"asset_id": "kohanim-terumah"}], "review": {"status": "draft", "blocking": []}},
+    {"id": "scene-03", "in": 174.2, "out": 262.2, "beat_ids": ["b-opinions"], "layout": "opinions-on-timeline", "purpose": "Enseñar las tres opiniones simultáneamente", "text_direction": "mixed", "source_time": {"in": 174.2, "out": 262.2}, "spoken_claim": "Primer tercio / medianoche / alba", "visuals": [{"asset_id": "night-timeline", "positions": [{"name": "Rabí Eliezer", "limit": "primer tercio"}, {"name": "Sabios", "limit": "medianoche"}, {"name": "Rabán Gamliel", "limit": "alba"}]}], "review": {"status": "draft", "blocking": []}}
+  ],
+  "qa": {"blocking": ["Verify transcript proper names and source locator", "Compare the rendered overlay against the original class frame-by-frame"], "reviewed_by": [], "status": "draft"}
+}

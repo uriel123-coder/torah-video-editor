@@ -39,4 +39,13 @@ class ManifestTests(unittest.TestCase):
         for term in ("--word_timestamps", "video not found", "Whisper is not installed"):
             self.assertIn(term, script)
 
+    def test_recorded_class_requires_duration_and_original_audio(self):
+        data={"schema_version":"0.1","project":{"mode":"recorded_class","source_duration":10,"output_duration":11},"sources":[],"beats":[],"assets":[],"scenes":[],"audio":{"mode":"replacement","preserve":False},"transcript":{"timestamps":False},"segments":[],"qa":{"blocking":[],"status":"draft"}}
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            p=pathlib.Path(d)/"bad-recorded.json"; p.write_text(json.dumps(data))
+            r=self.run_tool("validate", p)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertIn("output_duration", r.stdout)
+
 if __name__ == "__main__": unittest.main()

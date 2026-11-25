@@ -30,6 +30,20 @@ When the project is Gemara Visual, its repository rules are authoritative. Do no
 - **Assembly/export:** keep data in the project contract. The app renderer and HyperFrames export must show the same sampled moments; no hand-edited video overlay can repair a bad scene.
 - **Render and QA:** run the project's review commands, inspect every required contact sheet, validate RTL/text/source/fidelity/physics/framing, and stop on blocking findings.
 
+## Recorded-class mode (mandatory for an uploaded class video)
+
+When the input is a recorded class, the original video and original voice are the spine of the edit:
+
+- Preserve the source video duration exactly. The output may not be longer; opening cards, graphics, pauses, and endings must fit inside the source duration.
+- Preserve the original audio by default. Do not replace the teacher with synthetic narration, and do not remove speech to make room for visuals. Music is optional and must stay below intelligibility.
+- Transcribe first with segment timestamps. Every graphic, crop, diagram, source card, or illustrative insert needs `source_time`, `spoken_claim`, and a reason it teaches that claim.
+- Keep the class video visible as the base whenever the teacher is speaking. A graphic may occupy part of the frame or appear as a controlled cutaway only when the spoken content calls for it.
+- Do not add generic photos. If the teacher says “three opinions”, show all three named positions together with equal weight; if the teacher explains a sequence, animate that sequence in the same order; if a word is uncertain, leave the visual uncommitted and mark it for review.
+- The visual must teach at the same time as the voice: no montage that summarizes a different part later, no visual that precedes an unexplained idea, and no label that the audio does not support.
+- If the transcript has silence, uncertainty, or a gap, preserve the source video or use a neutral hold; never fill it with invented content.
+
+The acceptance test for this mode is: `output_duration == source_duration`, original audio is present, every non-neutral scene maps to a timestamped transcript span, and the contact sheet lets a viewer understand the spoken change without guessing what the image means.
+
 ## Deliverables
 
 At minimum return: the reviewed data storyboard/VisualSpec, source ledger, review frames/contact sheet, the exact render command, and a QA report. For a Gemara Visual implementation, also return the project checks and the HyperFrames adapter/check result. Do not claim a final render when the founder review or source review is still blocking.
@@ -44,5 +58,6 @@ At minimum return: the reviewed data storyboard/VisualSpec, source ledger, revie
 - Render and review checklist: [qa-checklist.md](references/qa-checklist.md)
 - Gemara Visual contracts and design mapping: [gemara-visual-integration.md](references/gemara-visual-integration.md)
 - HyperFrames export adapter and limits: [hyperframes-export.md](references/hyperframes-export.md)
+- Recorded class video mode: [recorded-class-mode.md](references/recorded-class-mode.md)
 
 For a new project, copy `examples/edit-manifest.example.json` and run `python scripts/semantic_manifest.py validate ...` before rendering.
