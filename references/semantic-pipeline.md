@@ -1,10 +1,21 @@
 # Semantic editing pipeline
 
+## Gemara Visual mode
+
+When the target repository is Gemara Visual, this generic manifest is only an interchange note. The production contract is its validated `StudyUnit`/`VisualSpec` and storyboard data. The agent must not generate HTML, SVG paths, physics, or a second timing system as a shortcut. The repository renderer owns those concerns.
+
 ## Stages
 
 ```text
 media → transcript → normalized beats → source ledger → visual plan → asset ledger
       → timeline manifest → captions/render → frame/audio/RTL QA → deliverables
+```
+
+For Gemara Visual, replace the middle with:
+
+```text
+source study → learner/teacher explanation → VisualSpec → storyboard data
+→ deterministic world/physics/layout → app frames → photo/panel review → export
 ```
 
 ## Manifest contract
@@ -19,4 +30,4 @@ Keep raw transcript text separate from normalized text. Mark uncertain words wit
 
 ## Rendering integration
 
-The manifest is renderer-neutral. A Remotion, FFmpeg, Premiere, Resolve, or ChatCut adapter may consume it. Adapters must preserve scene IDs, source labels, caption timing, RTL metadata, and the QA report. The skill does not assume that a missing renderer means the edit is impossible: it can still deliver a reviewable manifest and asset brief.
+The manifest is renderer-neutral. In standalone work, an adapter may consume it. In Gemara Visual, the canonical renderer is the existing deterministic SVG/timeline system; HyperFrames is allowed only as a faithful export adapter after comparison. Any adapter must preserve scene IDs, source labels, caption timing, RTL metadata, physics-derived geometry, and the QA report. A missing adapter never authorizes inventing a new interpretation of the source.

@@ -1,4 +1,6 @@
-# Design system
+# Standalone design system
+
+This section is only for projects that do not already provide a visual bible. For Gemara Visual, use [gemara-visual-integration.md](gemara-visual-integration.md), `src/design/tokens.ts`, and the repository's creative bible instead. Never merge this standalone palette into Gemara Visual.
 
 ## Identity
 

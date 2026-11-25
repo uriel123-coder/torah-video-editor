@@ -23,4 +23,12 @@ class ManifestTests(unittest.TestCase):
             p=pathlib.Path(d)/"bad.json"; p.write_text(json.dumps(data))
             self.assertNotEqual(self.run_tool("validate", p).returncode, 0)
 
+    def test_project_integration_references_are_present(self):
+        integration=(ROOT/"references/gemara-visual-integration.md").read_text()
+        hyper=(ROOT/"references/hyperframes-export.md").read_text()
+        for term in ("VisualSpec", "src/design/tokens.ts", "sampleAt(t)", "No inventado"):
+            self.assertIn(term, integration)
+        for term in ("npx hyperframes check --json", "same moment ids", "must not receive a prompt"):
+            self.assertIn(term, hyper)
+
 if __name__ == "__main__": unittest.main()

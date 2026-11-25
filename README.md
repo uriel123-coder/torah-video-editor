@@ -1,12 +1,13 @@
 # Torah Video Editor
 
-An installable Codex/Claude Code skill for editing Torah, Talmud, Gemara, Halakha, and Jewish education videos as clear visual lessons.
+An installable Codex/Claude Code skill for planning and exporting Torah, Talmud, Gemara, Halakha, and Jewish education videos as clear, source-faithful visual lessons. It includes a specific integration contract for Gemara Visual and a guarded HyperFrames export adapter.
 
 ## What it does
 
-- Plans scenes from a timestamped transcript instead of cutting by silence alone.
-- Uses a restrained editorial system: presenter, source close-up, PiP, split-screen, diagrams, and synchronized emphasis.
-- Includes original design manuals for identity, palette, typography, layouts, motion, storytelling, and source precision.
+- Plans scenes from the source study and teaching obstacle instead of cutting by silence or decorating a talking head.
+- Maps to Gemara Visual's VisualSpec, physical world, deterministic timeline, canonical design tokens, source rules, and photo/panel review.
+- Includes standalone design manuals only as a fallback when a project has no visual bible.
+- Defines a guarded HyperFrames adapter that exports approved scene data without reinterpreting the sugya.
 - Treats Hebrew/Aramaic text, quotations, measurements, and halakhic claims as review-sensitive.
 - Generates and validates an edit manifest that can drive a renderer or a human editor.
 
@@ -31,6 +32,8 @@ python scripts/semantic_manifest.py report edit-manifest.json --out qa-report.md
 ```
 
 Then add transcript beats, source records, assets, and scenes. Use `examples/` as the smallest complete examples.
+
+For Gemara Visual, do not use the standalone manifest as the production schema. Read `references/gemara-visual-integration.md`, work inside the repository's existing commands and contracts, and use `references/hyperframes-export.md` only for an explicit export migration.
 
 ## Repository map
 
