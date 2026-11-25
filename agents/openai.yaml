@@ -1,0 +1,4 @@
+interface:
+  display_name: Torah Video Editor
+  short_description: Edit Torah and Gemara lessons with source-faithful visual storytelling.
+  default_prompt: Use $torah-video-editor to analyze this Torah or Gemara class, build a semantic edit manifest, create explanatory visuals, and prepare a reviewed render.

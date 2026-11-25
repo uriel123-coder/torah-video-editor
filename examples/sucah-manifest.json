@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "project": {"title": "Estructura de la sucá — ejemplo", "duration": 48, "language": "es", "aspect_ratio": "9:16"},
+  "sources": [{"id": "sucah-source-01", "work": "Fuente mencionada en la clase", "locator": "pendiente de edición", "language": "he", "status": "needs_review", "original_text": "", "translation": ""}],
+  "beats": [
+    {"id": "b1", "in": 0, "out": 9, "type": "presenter", "summary": "Pregunta inicial", "confidence": 0.95},
+    {"id": "b2", "in": 9, "out": 24, "type": "definition", "summary": "Construcción visual de tres paredes y cubierta", "confidence": 0.91},
+    {"id": "b3", "in": 24, "out": 36, "type": "measurement", "summary": "Medida citada por el maestro; verificar convención", "confidence": 0.73},
+    {"id": "b4", "in": 36, "out": 48, "type": "source", "summary": "Texto original aún no proporcionado", "confidence": 0.88}
+  ],
+  "assets": [{"id": "sucah-diagram", "kind": "diagram", "label": "Diagrama explicativo de sucá", "provenance": "original", "review": "approved-for-review"}],
+  "scenes": [
+    {"id": "s1", "in": 0, "out": 9, "beat_ids": ["b1"], "layout": "presenter-full", "purpose": "Establecer la pregunta", "text_direction": "ltr", "visuals": [], "review": {"status": "draft", "blocking": []}},
+    {"id": "s2", "in": 9, "out": 24, "beat_ids": ["b2"], "layout": "presenter-pip", "purpose": "Explicar la estructura", "text_direction": "mixed", "visuals": [{"asset_id": "sucah-diagram", "sync": "build walls then roof"}], "review": {"status": "draft", "blocking": []}},
+    {"id": "s3", "in": 24, "out": 36, "beat_ids": ["b3"], "layout": "diagram-board", "purpose": "Mostrar la medida sin inventar convención", "text_direction": "ltr", "visuals": [{"asset_id": "sucah-diagram", "annotation": "measurement from endpoint to endpoint"}], "review": {"status": "draft", "blocking": ["Verify unit and source"]}},
+    {"id": "s4", "in": 36, "out": 48, "beat_ids": ["b4"], "layout": "source-desk", "purpose": "Mostrar fuente cuando sea proporcionada", "text_direction": "rtl", "visuals": [], "review": {"status": "draft", "blocking": ["Insert exact Hebrew/Aramaic excerpt and locator"]}}
+  ],
+  "qa": {"blocking": ["Source and measurement require review"], "reviewed_by": [], "status": "draft"}
+}

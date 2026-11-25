@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "project": {"title": "Example Torah lesson", "duration": 42, "language": "es", "aspect_ratio": "16:9"},
+  "sources": [{"id": "src-01", "work": "Source supplied by teacher", "locator": "to be verified", "language": "he", "status": "provided_unverified", "original_text": "טקסט לדוגמה", "translation": "Texto de ejemplo"}],
+  "beats": [{"id": "b-01", "in": 0, "out": 8, "type": "presenter", "summary": "Introduces the question", "confidence": 0.98}],
+  "assets": [{"id": "asset-01", "kind": "diagram", "label": "Editorial visualization", "provenance": "original", "review": "approved-for-review"}],
+  "scenes": [{"id": "scene-01", "in": 0, "out": 8, "beat_ids": ["b-01"], "layout": "presenter-full", "purpose": "Establish the question", "text_direction": "ltr", "visuals": [], "review": {"status": "draft", "blocking": []}}],
+  "qa": {"blocking": [], "reviewed_by": [], "status": "draft"}
+}

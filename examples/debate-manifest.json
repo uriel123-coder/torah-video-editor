@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1",
+  "project": {"title": "Debate de Guemará — ejemplo", "duration": 36, "language": "es", "aspect_ratio": "16:9"},
+  "sources": [{"id": "debate-source-01", "work": "Talmud Bavli", "locator": "pendiente de verificar edición", "language": "arc", "status": "needs_review", "original_text": "", "translation": ""}],
+  "beats": [{"id": "d1", "in": 0, "out": 8, "type": "question", "summary": "Shared question", "confidence": 0.94}, {"id": "d2", "in": 8, "out": 22, "type": "machloket", "summary": "Two named positions", "confidence": 0.86}, {"id": "d3", "in": 22, "out": 36, "type": "conclusion", "summary": "Teacher conclusion or open question", "confidence": 0.79}],
+  "assets": [],
+  "scenes": [{"id": "d-s1", "in": 0, "out": 8, "beat_ids": ["d1"], "layout": "presenter-full", "purpose": "Frame the question", "text_direction": "ltr", "visuals": [], "review": {"status": "draft", "blocking": []}}, {"id": "d-s2", "in": 8, "out": 22, "beat_ids": ["d2"], "layout": "split-case", "purpose": "Compare positions without winner coding", "text_direction": "mixed", "visuals": [{"position_a": "sage", "position_b": "terracotta", "motion": "lateral handoff"}], "review": {"status": "draft", "blocking": ["Verify names and source text"]}}, {"id": "d-s3", "in": 22, "out": 36, "beat_ids": ["d3"], "layout": "presenter-full", "purpose": "State teacher conclusion or leave open", "text_direction": "ltr", "visuals": [], "review": {"status": "draft", "blocking": []}}],
+  "qa": {"blocking": ["Verify source and teacher conclusion"], "reviewed_by": [], "status": "draft"}
+}
